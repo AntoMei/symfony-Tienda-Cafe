@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\TeamRepository;
+use App\Repository\MarcaRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TeamRepository::class)]
-class Team
+#[ORM\Entity(repositoryClass: MarcaRepository::class)]
+class Marca
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

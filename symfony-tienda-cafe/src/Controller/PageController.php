@@ -2,16 +2,27 @@
 
 namespace App\Controller;
 
+use App\Entity\Marca;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class PageController extends AbstractController
 {
-    #[Route('/', name: 'index')]
-    public function index(): Response
+    public function marcaTemplate(ManagerRegistry $doctrine): Response
     {
-        return $this->render('page/index.html.twig', []);
+        $repository = $doctrine->getRepository(Marca::class);
+        $marca = $repository->findAll();
+        return $this->render('partials/_marca.html.twig', 
+            compact('marca')
+        );
+    }
+    #[Route('/', name: 'index')]
+    public function index(ManagerRegistry $doctrine): Response
+    {
+        return $this->render('page/index.html.twig');
     }
 
     #[Route('/about', name: 'about')]
@@ -30,6 +41,12 @@ class PageController extends AbstractController
     public function review(): Response
     {
         return $this->render('page/review.html.twig', []);
+    }
+
+    #[Route('/marca', name: 'marca')]
+    public function marca(): Response
+    {
+        return $this->render('page/marca.html.twig', []);
     }
 
     #[Route('/contact', name: 'contact')]

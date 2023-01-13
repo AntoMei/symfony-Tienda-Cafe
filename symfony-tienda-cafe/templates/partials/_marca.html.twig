@@ -1,0 +1,65 @@
+    <!--<h1 class="heading"> <span>Nuestras</span> Marcas </h1>
+     Team Start 
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+                <h6 class="text-primary text-uppercase">Team Members</h6>
+                <h1 class="display-5 text-uppercase mb-0">Qualified Pets Care Professionals</h1>
+            </div>
+            <div class="owl-carousel team-carousel position-relative" style="padding-right: 25px;">
+             {% for marcaMember in marca %}
+                <div class="team-item">
+                    <div class="position-relative-overflow-hidden">
+                        <img class="img-fluid-w-100" src="{{ asset('images/' ~ marcaMember.photo) }}" alt="">
+
+
+                    </div>
+                    <div class="bg-light text-center p-4">
+                        <h5 class="text-uppercase">{{ marcaMember.name }}</h5>
+                        <p class="m-0">{{ marcaMember.designation }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- Team End -->
+
+<section class="menu" id="menu">
+
+<h1 class="heading"> Nuestras <span>marcas</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/cafe1.png" alt="">
+            <h3>Nescafé</h3>
+        </div>
+
+        <div class="box">
+            <img src="images/cafe2.png" alt="">
+            <h3>Bonka</h3>
+        </div>
+
+        <div class="box">
+            <img src="images/cafe3.png" alt="">
+            <h3>Nespresso</h3>
+        </div>
+
+        <div class="box">
+            <img src="images/cafe4.png" alt="">
+            <h3>Nestle</h3>
+        </div>
+
+        <div class="box">
+            <img src="images/cafe5.png" alt="">
+            <h3>L'OR</h3>
+        </div>
+
+    </div>
+
+</section>
+<br style="margin-top:5%">
+
+<!-- menu section ends -->
