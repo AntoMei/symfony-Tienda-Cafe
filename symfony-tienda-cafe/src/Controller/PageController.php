@@ -26,6 +26,12 @@ class PageController extends AbstractController
         return $this->render('page/menu.html.twig', []);
     }
 
+    #[Route('/review', name: 'review')]
+    public function review(): Response
+    {
+        return $this->render('page/review.html.twig', []);
+    }
+
     #[Route('/contact', name: 'contact')]
     public function contact(): Response
     {
